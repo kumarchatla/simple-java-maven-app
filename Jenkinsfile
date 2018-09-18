@@ -34,6 +34,7 @@ pipeline {
 		}
 		stage('Deliver') {
 			steps {
+				archiveArtifacts allowEmptyArchive: true, artifacts: '**/*.jar'
 				sh './jenkins/scripts/deliver.sh'
 			}
 		}
