@@ -25,6 +25,7 @@ echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 java -jar target/${NAME}-${VERSION}.jar
 
+set -x
 echo 'The following command runs curl to push the jar to a nexus repository on another server.'
 set -x
-curl -v -u admin:admin123 --upload-file target/${NAME}-${VERSION}.jar http://johndavidmarx3.mylabserver.com:8081/repository/maven-snapshots/${NAME}-${VERSION}.jar
+curl -v -u admin:admin123 --upload-file target/${NAME}-${VERSION}.jar http://johndavidmarx3.mylabserver.com:8081/repository/maven-snapshots/Linux_Academy/${NAME}-${VERSION}.jar
