@@ -38,10 +38,5 @@ pipeline {
 				sh './jenkins/scripts/deliver.sh'
 			}
 		}
-		stage('Push To Nexus') {
-			steps {
-				sh 'mvn deploy:deploy-file -DgroupId=com.devsecops -DartifactId=simple-java-maven-app -Dversion=1.0.0 -DgeneratePom=false -Dpackaging=jar -DrepositoryId=nexus -Durl=http://johndavidmarx3.mylabserver.com:8081/repository/maven-releases -Dfile=target/my-app-1.0-SNAPSHOT.jar'
-			}
-		}
 	}
 }
