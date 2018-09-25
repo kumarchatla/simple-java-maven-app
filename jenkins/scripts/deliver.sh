@@ -32,3 +32,9 @@ set -x
 echo 'The following command runs curl to push the jar to a nexus repository on another server.'
 set -x
 curl -v -u ${NexusUser}:${NexusPW} --upload-file target/${NAME}-${VERSION}.jar http://johndavidmarx3.mylabserver.com:8081/repository/maven-snapshots/Linux_Academy/${NAME}-${VERSION}.jar
+
+set -x
+curl --cookie-jar cookie.txt "https://console.deployhub.com/dmadminweb/API/login?user=developer&pass=any"
+
+set -x
+curl -b cookie.txt "https://console.deployhub.com/dmadminweb/API/deploy/HelloWorldApp%3B1/GLOBAL.Linux%20Academy.DevSecOps.My%20Pipeline.Development.Dev?task=Deploy%20to%20Dev&wait=n"
